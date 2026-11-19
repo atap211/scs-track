@@ -1,4 +1,3 @@
-// AI-assisted, directed by atap -- the FS5a label, the same words as the receipt log.
 function checkStock(){
   const ss =SpreadsheetApp.getActiveSpreadsheet();
   const dashboard = ss.getSheetByName("DASHBOARD");
