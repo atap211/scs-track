@@ -1,3 +1,5 @@
+// AI-assisted, directed by atap
+/** @OnlyCurrentDoc */
 function checkStock(){
   const ss =SpreadsheetApp.getActiveSpreadsheet();
   const dashboard = ss.getSheetByName("DASHBOARD");
@@ -95,6 +97,3 @@ function testMonthlyReportSheet() {
   Logger.log("SHEET NAMES: " +
     ss.getSheets().map(sheet => sheet.getName()).join(", "));
 }
-
-
-
