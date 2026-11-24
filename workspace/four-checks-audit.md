@@ -9,7 +9,7 @@ page you read and the date you read it.  One section per piece; add a new piece 
 ### Auth
 Looked for: Hardcoded API keys, secrets in URLs, unencrypted HTTP endpoints, and secrets committed in git history.
 Found: `send-sms.js` hardcoded `SMS_API_KEY` in plain text, appended `?key=` to an unencrypted `http://` URL, printed it in `--dry-run`, and committed it in `58dd65c`. Removed by hand on `main` and replaced with `process.env.SMS_API_KEY`.
-Evidence: `git grep -n "SMS_API_KEY" workspace/stock-tools/` printed `workspace/stock-tools/send-sms.js:9:const SMS_API_KEY = "LLDEMO-SMS-[REDACTED]";` (before manual removal).
+Evidence: `git grep -n "SMS_API_KEY" workspace/stock-tools/` printed `workspace/stock-tools/send-sms.js:9:const SMS_API_KEY = "[REDACTED]";` (before manual removal).
 
 ### Edge cases
 Ugly inputs, written before trying them: Blank `In stock` cell (`Cement 50 kg,,20,bags`), quoted comma (`"Nails, 3 inch"`), boundary equality (`grinding discs 115 mm` at `20` vs `20`), apostrophe (`ng'ombe salt lick`), and ampersand (`Nuts & bolts M10`).
