@@ -21,12 +21,10 @@ function parseCsv(text) {
 
 // Items at or below their reorder level.
 function reorderList(rows) {
-  return rows
-    .filter((r) => {
-      const stock = r["In stock"] === "" ? 0 : parseInt(r["In stock"], 10);
-      return stock <= parseInt(r["Reorder at"], 10);
-    })
-    .sort((a, b) => a.Item.localeCompare(b.Item));
+  return rows.filter((r) => {
+    const stock = r["In stock"] === "" ? 0 : parseInt(r["In stock"], 10);
+    return stock <= parseInt(r["Reorder at"], 10);
+  });
 }
 
 // One list per supplier, so each supplier gets one message.
