@@ -9,20 +9,11 @@ page you read and the date you read it.  One section per piece; add a new piece 
 ### Auth
 Looked for: Hardcoded API keys, secrets in URLs, unencrypted HTTP endpoints, and secrets committed in git history.
 Found: `send-sms.js` hardcoded `SMS_API_KEY` in plain text, appended `?key=` to an unencrypted `http://` URL, printed it in `--dry-run`, and committed it in `58dd65c`. Removed by hand on `main` and replaced with `process.env.SMS_API_KEY`.
-Evidence: `git grep -n "SMS_API_KEY" workspace/stock-tools/` printed `workspace/stock-tools/send-sms.js:9:const SMS_API_KEY = "LLDEMO-SMS-5c1e9a07d2b84f63";` (before manual removal).
+Evidence: `git grep -n "SMS_API_KEY" workspace/stock-tools/` printed `workspace/stock-tools/send-sms.js:9:const SMS_API_KEY = "LLDEMO-SMS-[REDACTED]";` (before manual removal).
 
 ### Edge cases
-Ugly inputs, written before trying them:
-1. Blank `In stock` cell (`Cement 50 kg,,20,bags`) -> should reorder (`0 <= 20`).
-2. Quoted comma in item name (`"Nails, 3 inch",Hardware wholesaler,4,10,kg`) -> should reorder (`4 <= 10`).
-3. Boundary equality (`grinding discs 115 mm,Gas and welding supplier,20,20,pieces`) -> README says "at or below", should reorder (`20 <= 20`).
-4. Lower-case apostrophe (`ng'ombe salt lick`) -> should capitalize cleanly without capitalizing after `'`.
-5. Ampersand in item name (`Nuts & bolts M10`) -> must be URL-encoded in SMS query string.
-Found:
-- `reorder.js:23` uses `<` instead of `<=` and `parseInt("", 10)` yields `NaN`, dropping `Cement 50 kg` and `grinding discs 115 mm`.
-- `reorder.js:13` splits on `line.split(",")`, shifting columns on `"Nails, 3 inch"` so `In stock` becomes `" 3 inch"` (`NaN`) and drops the row.
-- `reorder.js:33` (`/\b\w/g`) turns `ng'ombe` into `Ng'Ombe`.
-- `send-sms.js:14` concatenates raw `text` without `encodeURIComponent`, breaking the query string at `&` in `Nuts & bolts M10`.
+Ugly inputs, written before trying them: Blank `In stock` cell (`Cement 50 kg,,20,bags`), quoted comma (`"Nails, 3 inch"`), boundary equality (`grinding discs 115 mm` at `20` vs `20`), apostrophe (`ng'ombe salt lick`), and ampersand (`Nuts & bolts M10`).
+Found: `reorder.js:23` uses `<` instead of `<=` and `parseInt("", 10)` yields `NaN` (dropping `Cement 50 kg` and `grinding discs 115 mm`); `reorder.js:13` splits on `line.split(",")` (dropping `"Nails, 3 inch"`); `reorder.js:33` turns `ng'ombe` into `Ng'Ombe`; `send-sms.js:14` omits `encodeURIComponent` on `&`.
 Evidence: `node workspace/stock-tools/reorder.js workspace/stock-tools/stock-export.csv` printed only 4 items (Welding rods, ng'ombe salt lick, Nuts & bolts, Oxygen refill) instead of 7.
 
 ### Wrong versions
@@ -45,13 +36,8 @@ Found: Clean — uses `SpreadsheetApp.getActiveSpreadsheet()` with container-bou
 Evidence: `grep -En "key|token|secret|password|http" ~/scs/evidence/scs3.5/reference-reminder-defended-original.gs` returned no matches (2026-11-24).
 
 ### Edge cases
-Ugly inputs, written before trying them:
-1. Stock items added below row 15 on `DASHBOARD` (or sales past row 1000 on `RECORD`).
-2. Lowercase or trailing-space status (`"reorder"` or `"REORDER "`) in column C of `DASHBOARD`.
-3. Running the monthly report in a different month than October 2026 (`reportMonth = 9`).
-Found:
-- `checkStock()` hardcodes `dashboard.getRange("A12:C15")` and strict `row[2] === "REORDER"`, missing rows past row 15 or un-trimmed/lowercase status strings; also misspells the output sheet `"REMINDEERS"`.
-- `generateMonthlyReport()` hardcodes `reportMonth = 9` and `reportYear = 2026`, so it will not report November 2026 without editing code.
+Ugly inputs, written before trying them: Stock rows below row 15 on `DASHBOARD` (or sales past row 1000 on `RECORD`), lowercase/trailing-space `"reorder"` in column C, and running `generateMonthlyReport()` after October 2026.
+Found: `checkStock()` hardcodes `dashboard.getRange("A12:C15")` and strict `row[2] === "REORDER"`, missing rows past row 15 or un-trimmed/lowercase status strings, and misspells `"REMINDEERS"`; `generateMonthlyReport()` hardcodes `reportMonth = 9` and `reportYear = 2026`.
 Evidence: Read `~/scs/evidence/scs3.5/reference-reminder-defended-original.gs` lines 4, 6, 7, 32-33 on 2026-11-24.
 
 ### Wrong versions
