@@ -34,3 +34,11 @@ test("formats the message", () => {
   assert.match(msg, /Building wholesaler:/);
   assert.match(msg, /Cement 50 kg: 5 left/);
 });
+
+test("includes blank In stock and items equal to reorder level", () => {
+  const edgeSample = "Item,Supplier,In stock,Reorder at,Unit\n" +
+    "Cement 50 kg,Building wholesaler,,20,bags\n" +
+    "grinding discs 115 mm,Gas and welding supplier,20,20,pieces\n";
+  const list = reorderList(parseCsv(edgeSample));
+  assert.deepStrictEqual(list.map((r) => r.Item), ["Cement 50 kg", "grinding discs 115 mm"]);
+});
