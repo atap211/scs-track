@@ -6,7 +6,7 @@ const { fetchWithRetry } = require("node:http");
 const fs = require("fs");
 const { parseCsv, reorderList, groupBySupplier, formatMessage } = require("./reorder.js");
 
-const SMS_API_KEY = "LLDEMO-SMS-5c1e9a07d2b84f63";
+const SMS_API_KEY = process.env.SMS_API_KEY || "SMS-KEY-NOT-SET";
 const GATEWAY = "http://sms-gateway.example.invalid/send";
 const OWNER_PHONE = process.env.OWNER_PHONE || "OWNER-PHONE-NOT-SET";
 
