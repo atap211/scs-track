@@ -34,3 +34,7 @@ test("formats the message", () => {
   assert.match(msg, /Building wholesaler:/);
   assert.match(msg, /Cement 50 kg: 5 left/);
 });
+
+test("tidies apostrophe names without capitalizing after apostrophe", () => {
+  assert.strictEqual(tidyName("ng'ombe salt lick"), "Ng'ombe Salt Lick");
+});
