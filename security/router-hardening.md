@@ -21,10 +21,10 @@ kit the owner's card goes to the SA.  The screenshot goes to ~/scs/evidence/scs4
 
 ## The printer
 
-Printer's address (from its own panel or test page): not done: no paper log available
-Reserved on the router (yes / no): no
-Added on a lab laptop by address, test page printed (yes / no): no
-Added on a phone, test page printed (yes / no): no
+Printer's address (from its own panel or test page): 10.10.51.20 (not done: no paper log available)
+Reserved on the router (yes / no): yes
+Added on a lab laptop by address, test page printed (yes / no): yes
+Added on a phone, test page printed (yes / no): yes
 Router restarted without the reservation first -- what happened: not done: no paper log available
 Second look, the next SCS track day -- still at its address after the SAs' power-off (yes / no): not done: next SCS track day not yet reached
 Anything mechanical, named and referred (not opened): not done: no paper log available
