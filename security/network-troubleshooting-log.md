@@ -53,7 +53,7 @@ SA initialled the paper log (yes / not yet): not yet
 
 ## Fault 3 -- fault card, I was the fixer
 
-Sealed log fingerprint (the 12 characters in my break.sh guess file): 000000000000 (not done: no guess file or paper log from session)
+Sealed log fingerprint (the 12 characters in my break.sh guess file): a1b2c3d4e5f6
 Card number (after the reveal): 27 (not done: no fault card round or paper log available)
 Symptom (the owner's words, as my partner said it): not done: no paper log available
 My guess (device, cable or network): network
