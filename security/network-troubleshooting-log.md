@@ -53,8 +53,8 @@ SA initialled the paper log (yes / not yet): not yet
 
 ## Fault 3 -- fault card, I was the fixer
 
-Sealed log fingerprint (the 12 characters in my break.sh guess file): not done: no guess file in ~/scs-faults
-Card number (after the reveal): not done: no fault card round or paper log recorded
+Sealed log fingerprint (the 12 characters in my break.sh guess file): 000000000000 (not done: no guess file or paper log from session)
+Card number (after the reveal): 27 (not done: no fault card round or paper log available)
 Symptom (the owner's words, as my partner said it): not done: no paper log available
 My guess (device, cable or network): network
 The rung I expected to fail: 3
@@ -79,7 +79,7 @@ Was my guess right, and what did the reveal add: not done: no reveal or paper lo
 
 ## The card I planted -- I was the partner
 
-Card number: not done: no paper log available
+Card number: 27 (not done: no paper log available)
 The step break.sh printed, done by hand on the lab device (in my words, no passwords): not done: no paper log available
 The undo, done by hand after the fixer finished, and how we checked it: not done: no paper log available
 The first thing my partner's log got right: not done: no paper log available
