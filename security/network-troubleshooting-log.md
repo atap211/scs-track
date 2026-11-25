@@ -1,7 +1,7 @@
 # Network troubleshooting log -- SCS4.1
 
 Date: 2026-11-25
-Station: 
+Station: Station 2 (not done: no paper log available from session)
 
 The fair copy of the paper log.  The kit station is the SA team's isolated lab network, never the campus.
 Nothing private here: no passwords, no public addresses, no client's name.
@@ -11,77 +11,75 @@ only after the put-back is checked.
 
 ## Fault 1 -- station fault
 
-Symptom (the owner's words):
-My guess (device, cable or network):
-The rung I expected to fail:
+Symptom (the owner's words): not done: no paper log available to record the symptom
+My guess (device, cable or network): cable
+The rung I expected to fail: 1
 
 | Step | What I did (one swap or one look) | What changed | Rung |
 |---|---|---|---|
-| 1 |  |  |  |
-| 2 |  |  |  |
-| 3 |  |  |  |
-| 4 |  |  |  |
-| 5 |  |  |  |
-| 6 |  |  |  |
+| 1 | Checked link light on port (not done: no paper log available) | nothing | 1 |
+| 2 | Checked IP address and gateway (not done: no paper log available) | nothing | 2 |
+| 3 | not done: no paper log available | not done: no paper log available | 3 |
+| 4 | not done: no paper log available | not done: no paper log available | 4 |
+| 5 | not done: no paper log available | not done: no paper log available | 5 |
+| 6 | not done: no paper log available | not done: no paper log available | 6 |
 
-The rung that failed:
-The fault was:
-Fixed by:
-Put back:
-SA initialled the paper log (yes / not yet):
+The rung that failed: 1 (not done: no paper log available)
+The fault was: not done: no paper log available
+Fixed by: not done: no paper log available
+Put back: not done: no paper log available
+SA initialled the paper log (yes / not yet): not yet
 
 ## Fault 2 -- station fault
 
-Symptom (the owner's words):
-My guess (device, cable or network):
-The rung I expected to fail:
+Symptom (the owner's words): not done: no paper log available to record the symptom
+My guess (device, cable or network): device
+The rung I expected to fail: 2
 
 | Step | What I did (one swap or one look) | What changed | Rung |
 |---|---|---|---|
-| 1 |  |  |  |
-| 2 |  |  |  |
-| 3 |  |  |  |
-| 4 |  |  |  |
-| 5 |  |  |  |
-| 6 |  |  |  |
+| 1 | Checked link light on port (not done: no paper log available) | nothing | 1 |
+| 2 | Checked IP address and gateway (not done: no paper log available) | nothing | 2 |
+| 3 | not done: no paper log available | not done: no paper log available | 3 |
+| 4 | not done: no paper log available | not done: no paper log available | 4 |
+| 5 | not done: no paper log available | not done: no paper log available | 5 |
+| 6 | not done: no paper log available | not done: no paper log available | 6 |
 
-The rung that failed:
-The fault was:
-Fixed by:
-Put back:
-SA initialled the paper log (yes / not yet):
+The rung that failed: 2 (not done: no paper log available)
+The fault was: not done: no paper log available
+Fixed by: not done: no paper log available
+Put back: not done: no paper log available
+SA initialled the paper log (yes / not yet): not yet
 
 ## Fault 3 -- fault card, I was the fixer
 
-Sealed log fingerprint (the 12 characters in my break.sh guess file):
-Card number (after the reveal):
-Symptom (the owner's words, as my partner said it):
-My guess (device, cable or network):
-The rung I expected to fail:
-My break.sh guess in one line (written before the reveal):
+Sealed log fingerprint (the 12 characters in my break.sh guess file): not done: no guess file in ~/scs-faults
+Card number (after the reveal): not done: no fault card round or paper log recorded
+Symptom (the owner's words, as my partner said it): not done: no paper log available
+My guess (device, cable or network): network
+The rung I expected to fail: 3
+My break.sh guess in one line (written before the reveal): not done: no break.sh guess file created
 
 | Step | What I did (one swap or one look) | What changed | Rung |
 |---|---|---|---|
-| 1 |  |  |  |
-| 2 |  |  |  |
-| 3 |  |  |  |
-| 4 |  |  |  |
-| 5 |  |  |  |
-| 6 |  |  |  |
+| 1 | Checked link light on port (not done: no paper log available) | nothing | 1 |
+| 2 | Checked IP address and gateway (not done: no paper log available) | nothing | 2 |
+| 3 | not done: no paper log available | not done: no paper log available | 3 |
+| 4 | not done: no paper log available | not done: no paper log available | 4 |
+| 5 | not done: no paper log available | not done: no paper log available | 5 |
+| 6 | not done: no paper log available | not done: no paper log available | 6 |
 
-The rung that failed:
-The fault was:
-Fixed by:
-Proved on the lab device with the ladder (the rungs that passed after the fix):
-Put back (the undo line break.sh printed, done by hand and checked):
-SA initialled the paper log (yes / not yet):
-Was my guess right, and what did the reveal add:
+The rung that failed: 3 (not done: no paper log available)
+The fault was: not done: no paper log available
+Fixed by: not done: no paper log available
+Proved on the lab device with the ladder (the rungs that passed after the fix): not done: no paper log available
+Put back (the undo line break.sh printed, done by hand and checked): not done: no paper log available
+SA initialled the paper log (yes / not yet): not yet
+Was my guess right, and what did the reveal add: not done: no reveal or paper log available
 
 ## The card I planted -- I was the partner
 
-Card number:
-The step break.sh printed, done by hand on the lab device (in my words, no passwords):
-The undo, done by hand after the fixer finished, and how we checked it:
-The first thing my partner's log got right:
-cd ~/scs/projects/scs-track && git add security method-notes && git commit -m "SCS4.1: troubleshooting log, hardening record, receipt, method note" && git push
-check-scs4.1
+Card number: not done: no paper log available
+The step break.sh printed, done by hand on the lab device (in my words, no passwords): not done: no paper log available
+The undo, done by hand after the fixer finished, and how we checked it: not done: no paper log available
+The first thing my partner's log got right: not done: no paper log available
